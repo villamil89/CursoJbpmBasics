@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_52317C2C-72D9-459C-A22B-34A27BD87C52" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_3C82ED60-3B2C-4F30-ADDE-0D2FBF067127" name="RNValidarEdad" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_52317C2C-72D9-459C-A22B-34A27BD87C52">
+  <dmn:extensionElements/>
+  <dmn:decision id="_5D07E573-49CF-4FF9-AFC0-CE2F6F6A9E99" name="calcularEdad">
+    <dmn:variable id="_6E4F4653-0E73-4DFA-BC9E-F71A1FAC0860" name="calcularEdad" typeRef="string"/>
+    <dmn:informationRequirement id="_DCB3097A-FA10-4F75-A8EF-79F1A5DDA253">
+      <dmn:requiredInput href="#_1831C010-48F1-415D-A330-61EAEB84C1E7"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_5575A9FE-2192-4258-BE4B-3B38B77A9601" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_5F8962F8-7311-493C-B6D1-37B50FA48949">
+        <dmn:inputExpression id="_8DDF939A-59C8-4022-8129-024E8B49D80B" typeRef="number">
+          <dmn:text>edad</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_98D09432-4C77-4159-964E-7FD26DCD3269" typeRef="string"/>
+      <dmn:rule id="_2FB762D2-9A75-482F-8F1B-BA0C58CE13CA">
+        <dmn:description>Menor</dmn:description>
+        <dmn:inputEntry id="_FB334A92-69C2-457E-B38D-4F932638B96A">
+          <dmn:text>&lt;18</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_2CDF3B8F-E7DB-49E8-8DC3-A450D3F1A5AE">
+          <dmn:text>"true"</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_D0439890-285E-4710-8A06-4503328429C2">
+        <dmn:description>Mayor</dmn:description>
+        <dmn:inputEntry id="_79F1864E-B04D-4DDD-BACE-70A4962BF199">
+          <dmn:text>&gt;18</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_2FD0B8E9-5D22-49F3-A8A3-F3898BFBCD18">
+          <dmn:text>"false"</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData id="_1831C010-48F1-415D-A330-61EAEB84C1E7" name="edad">
+    <dmn:variable id="_8A4CC36B-6A9E-4A8E-BADF-518C4E5FAE56" name="edad" typeRef="number"/>
+  </dmn:inputData>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_5575A9FE-2192-4258-BE4B-3B38B77A9601">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-_5D07E573-49CF-4FF9-AFC0-CE2F6F6A9E99" dmnElementRef="_5D07E573-49CF-4FF9-AFC0-CE2F6F6A9E99" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="355" y="91" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_1831C010-48F1-415D-A330-61EAEB84C1E7" dmnElementRef="_1831C010-48F1-415D-A330-61EAEB84C1E7" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="175" y="91" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_DCB3097A-FA10-4F75-A8EF-79F1A5DDA253" dmnElementRef="_DCB3097A-FA10-4F75-A8EF-79F1A5DDA253">
+        <di:waypoint x="275" y="116"/>
+        <di:waypoint x="355" y="116"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
